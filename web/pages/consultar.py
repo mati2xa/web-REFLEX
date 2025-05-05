@@ -13,11 +13,13 @@ def form_add_product():
                     ),
                     rx.input(
                         value=ConsultarState.actual_product.nom,
+                        on_change=ConsultarState.update_nom,
                         placeholder="Nom",
                         name="nom_product",
                     ),
                     rx.input(
                         value=ConsultarState.actual_product.preu,
+                        on_change=ConsultarState.update_preu,
                         placeholder="Preu",
                         name="preu_product",
                     ),
@@ -26,11 +28,9 @@ def form_add_product():
                         rx.button("Eliminar", type="button",color_scheme="red",on_click=ConsultarState.handle_submit_delete),
                 )    
                 ),
-                on_submit=ConsultarState.handle_submit,
                 reset_on_submit=True,
             ),
     )
-
 def consultar_producte() -> rx.Component:
     return rx.container(
             rx.vstack(
