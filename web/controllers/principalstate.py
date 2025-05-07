@@ -19,7 +19,7 @@ class PrincipalState(rx.State): # les variables son les visuals de la pagina
     def strat_increment(self):
         self.count = 0
 
-    #on_blure cuando se sale del input se actualiza
     @rx.event
     def update_text(self, new_text: str):
         self.text = new_text
+

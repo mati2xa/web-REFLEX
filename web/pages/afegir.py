@@ -18,7 +18,7 @@ def form_add_producte():
                     placeholder="Preu del producte",
                     name="preu_product",
                 ),
-                rx.button("AFEGIR", type="submit"),
+                rx.button("AFEGIR", type="submit", on_click=rx.toast("Producto Añadido!")),
             ),
             on_submit=AfegirState.handle_submit,
             reset_on_submit=True,

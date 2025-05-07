@@ -17,5 +17,5 @@ class AfegirState(rx.State):
                 )
             )
             session.commit()
-        return rx.redirect("/afegir")
+        return rx.redirect("/llistat")
  

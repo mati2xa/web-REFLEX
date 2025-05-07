@@ -24,8 +24,8 @@ def form_add_product():
                         name="preu_product",
                     ),
                     rx.hstack(
-                        rx.button("Modificar", type="button",on_click=ConsultarState.handle_submit_update),
-                        rx.button("Eliminar", type="button",color_scheme="red",on_click=ConsultarState.handle_submit_delete),
+                        rx.button("Modificar", type="button",on_click=[ConsultarState.handle_submit_update,rx.toast("Producto Modificado!")]),
+                        rx.button("Eliminar", type="button",color_scheme="red",on_click=[ConsultarState.handle_submit_delete,rx.toast("Producto Eliminado!")]),
                 )    
                 ),
                 reset_on_submit=True,
