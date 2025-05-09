@@ -42,13 +42,13 @@ def sidebar_bottom_profile() -> rx.Component:
             rx.vstack(
                 rx.hstack(
                     rx.image(
-                        src="/icono.jpg",
+                        src="/PCCOM.png",
                         width="2.25em",
                         height="auto",
                         border_radius="25%",
                     ),
                     rx.heading(
-                        "Reflex", size="8", weight="bold"
+                        "PCCOM", size="8", weight="bold"
                     ),
                     align="center",
                     justify="start",
