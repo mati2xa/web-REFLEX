@@ -6,7 +6,7 @@ def sidebar_item(
     return rx.link(
         rx.hstack(
             rx.icon(icon),
-            rx.text(text, size="4"),
+            rx.text(text, size="3"),
             width="100%",
             padding_x="0.5rem",
             padding_y="0.75rem",
@@ -42,8 +42,8 @@ def sidebar_bottom_profile() -> rx.Component:
             rx.vstack(
                 rx.hstack(
                     rx.image(
-                        src="/PCCOM.png",
-                        width="2.25em",
+                        src="/pclogo.gif",
+                        width="7em",
                         height="auto",
                         border_radius="25%",
                     ),
@@ -52,7 +52,8 @@ def sidebar_bottom_profile() -> rx.Component:
                     ),
                     align="center",
                     justify="start",
-                    padding_x="0.5rem",
+                    spacing="0",
+                    padding_x="0",
                     width="100%",
                 ),
                 sidebar_items(),
@@ -113,7 +114,7 @@ def sidebar_bottom_profile() -> rx.Component:
                 align="start",
                 height="100%",
                 #height="650px",
-                width="16em",
+                width="18em",
             ),
         ),
         rx.mobile_and_tablet(

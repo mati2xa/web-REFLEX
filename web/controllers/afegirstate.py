@@ -11,9 +11,10 @@ class AfegirState(rx.State):
         with rx.session() as session:
             session.add(
                 Product(
-                    codi=form_data["codi_product"],
-                    nom=form_data["nom_product"],
-                    preu=form_data["preu_product"],
+                    stock=form_data["stock_product"],
+                    name=form_data["name_product"],
+                    price=form_data["price_product"],
+                    type=form_data["type_product"],
                 )
             )
             session.commit()

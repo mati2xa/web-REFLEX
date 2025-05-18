@@ -26,9 +26,10 @@ class ConsultarState(rx.State):
                     Product.id == int(self.get_codi)
                 )
             ).one_or_none()
-            product.codi = self.actual_product.codi
-            product.nom = self.actual_product.nom
-            product.preu = self.actual_product.preu
+            product.stock = self.actual_product.stock
+            product.name = self.actual_product.name
+            product.price = self.actual_product.price
+            product.type = self.actual_product.type
             session.add(product)
             session.commit()
 
@@ -48,13 +49,17 @@ class ConsultarState(rx.State):
         return rx.redirect("/llistat")
     
     @rx.event
-    def update_codi(self,value):
-        self.actual_product.codi = int(value)
+    def update_stock(self,value):
+        self.actual_product.stock = int(value)
 
     @rx.event
-    def update_nom(self,value):
-        self.actual_product.nom = value
+    def update_name(self,value):
+        self.actual_product.name = value
 
     @rx.event
-    def update_preu(self,value):
-        self.actual_product.preu = float(value)
+    def update_price(self,value):
+        self.actual_product.price = float(value)
+
+    @rx.event
+    def update_type(self,value):
+        self.actual_product.type = value

@@ -7,16 +7,20 @@ def form_add_producte():
         rx.form(
             rx.vstack(
                 rx.input(
-                    placeholder="Codi del producte",
-                    name="codi_product",
+                    placeholder="Stock del producte",
+                    name="stock_product",
                 ),
                 rx.input(
                     placeholder="Nom del producte",
-                    name="nom_product",
+                    name="name_product",
                 ),
                 rx.input(
                     placeholder="Preu del producte",
-                    name="preu_product",
+                    name="price_product",
+                ),
+                rx.input(
+                    placeholder="Tipus de producte",
+                    name="type_product",
                 ),
                 rx.button("AFEGIR", type="submit", on_click=rx.toast("Producto Añadido!")),
             ),

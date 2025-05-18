@@ -2,6 +2,7 @@ import reflex as rx
 from rxconfig import config
 from web.components import sidebar_bottom_profile
 from web.pages import center_container, afegir_producte, consultar_producte, llistat
+from web.pages.conocenos import conocenos
 from .controllers.llistastate import LlistaState
 from .controllers.consultarstate import ConsultarState
 
@@ -40,8 +41,10 @@ def consultar() -> rx.Component:
 
 
 app = rx.App()
-app.add_page(index)
+app.add_page(index, route="/")
 app.add_page(llista, route="llistat",on_load = LlistaState.get_products)
 app.add_page(afegir, route="afegir")
 app.add_page(consultar, route="consultar/[codi]", on_load = ConsultarState.get_product)
+app.add_page(conocenos, route="/conocenos")
+
 

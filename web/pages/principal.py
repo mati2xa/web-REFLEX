@@ -44,20 +44,31 @@ from ..controllers.principalstate import PrincipalState
 
 def center_container() -> rx.Component:
     return rx.box(
-        rx.hstack(
-            rx.heading("PCCOM", size="9", color="black"),
-            spacing="4",
-            align="center",
-            justify="center",
-        ),
-        rx.hstack(
-            rx.image(src="/PCCOM.png", width="700px", border_radius="lg", margin="20px", opacity=0.4),
-            spacing="4",
-            align="center",
-            justify="center",
+        rx.color_mode.button(position="top-right"),
+        rx.box(
+            rx.image(src="/pccomm.png", width="100%", max_width="1300px", border_radius="lg"),
+            rx.link(
+                rx.button("Conócenos", color_scheme="blue", border_radius="md"),
+                href="/conocenos",
+                style={
+                    "position": "absolute",
+                    "top": "50%",
+                    "left": "50%",
+                    "transform": "translate(-50%, -50%)",
+                    "z_index": "1"
+                }
+            ),
+            position="relative",
+            width="1300px", # ocupa todo el espacio de su contenedor, no de la pantalla completa
+            height="auto",
+            margin_left="17em",
         ),
         align_items="center",
         justify_content="center",
         min_height="100vh",
-        width="100%"
+        width="100%",  # NO uses 100vw porque eso ignora el sidebar
+        style={
+            "overflow": "hidden"
+        }
     )
+

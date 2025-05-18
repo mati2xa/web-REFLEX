@@ -6,22 +6,28 @@ def form_add_product():
             rx.form(
                 rx.vstack(
                     rx.input(
-                        value=ConsultarState.actual_product.codi,
-                        on_change=ConsultarState.update_codi,
-                        placeholder="Codi",
-                        name="codi_product",
+                        value=ConsultarState.actual_product.stock,
+                        on_change=ConsultarState.update_stock,
+                        placeholder="Stock",
+                        name="stock_product",
                     ),
                     rx.input(
-                        value=ConsultarState.actual_product.nom,
-                        on_change=ConsultarState.update_nom,
+                        value=ConsultarState.actual_product.name,
+                        on_change=ConsultarState.update_name,
                         placeholder="Nom",
-                        name="nom_product",
+                        name="name_product",
                     ),
                     rx.input(
-                        value=ConsultarState.actual_product.preu,
-                        on_change=ConsultarState.update_preu,
+                        value=ConsultarState.actual_product.price,
+                        on_change=ConsultarState.update_price,
                         placeholder="Preu",
-                        name="preu_product",
+                        name="price_product",
+                    ),
+                    rx.input(
+                        value=ConsultarState.actual_product.type,
+                        on_change=ConsultarState.update_type,
+                        placeholder="Tipus",
+                        name="type_product",
                     ),
                     rx.hstack(
                         rx.button("Modificar", type="button",on_click=[ConsultarState.handle_submit_update,rx.toast("Producto Modificado!")]),
